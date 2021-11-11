@@ -4,6 +4,14 @@ var uppercase = false;
 var numeric = false;
 var special = false;
 
+// list of all specific characters
+var lowercase_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+// not sure if this works correctly, I'll find out once I start experimenting with appending things to a password
+var uppercase_chars = lowercase_chars.map(char => char.toUpperCase());
+var numeric_chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var special_chars = ['!','\'', '"', '#', '$', '@', '!', '?', '&', '*', '(', ')', ',', '.', '/', '[', ']', '{', '}', '`', '~', '|'];
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -12,7 +20,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = password.toString();
 }
 
 // Add event listener to generate button
@@ -22,9 +30,12 @@ generateBtn.addEventListener("click", writePassword);
 var generatePassword = function() {
   // get the length of the password
   var length = getLength();
+  var password = "";
 
   // log it for debugging reasons
   console.log(length);
+
+  getCharacters();
 
   return password;
 }
@@ -56,5 +67,29 @@ var getLength = function() {
 
 // prompts the user for what characters to include in their password
 var getCharacters = function() {
-  
+  while(true) {
+
+    // ask the user to enter what they want in their password
+    var input = window.prompt("Does your password require lowercase, uppercase, numeric, and/or special characters? \n\nEnter 1 for Lowercase\nEnter 2 for Uppercase\nEnter 3 for Numeric\nEnter 4 for special\nEnter 5 to quit");
+
+    // set the flags according to what the user asked for
+    switch(input) {
+      case "1":
+        lowercase = true;
+        break;
+      case "2":
+        uppercase = true;
+        break;
+      case "3":
+        numeric = true;
+        break;
+      case "4":
+        special = true;
+        break;
+      case "5":
+        return;
+      default:
+        window.alert("Please enter one of the five options.");
+    }
+  }
 }
