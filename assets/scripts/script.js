@@ -8,6 +8,7 @@ var special = false;
 var lowercase_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 // not sure if this works correctly, I'll find out once I start experimenting with appending things to a password
+// Update: it works!
 var uppercase_chars = lowercase_chars.map(char => char.toUpperCase());
 var numeric_chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var special_chars = ['!','\'', '"', '#', '$', '@', '!', '?', '&', '*', '(', ')', ',', '.', '/', '[', ']', '{', '}', '`', '~', '|'];
@@ -30,12 +31,42 @@ generateBtn.addEventListener("click", writePassword);
 var generatePassword = function() {
   // get the length of the password
   var length = getLength();
-  var password = "";
+  var password = '';
 
   // log it for debugging reasons
   console.log(length);
 
   getCharacters();
+
+  // continue to append to the password string until the meets the desired length
+  while (password.length < length) {
+
+    // append a random lowercase char if the flag is true
+    if (lowercase) {
+      password += lowercase_chars[Math.floor(Math.random() * lowercase_chars.length)];
+    }
+
+    // append a random uppercase char if the flag is true
+    if (uppercase) {
+      password += uppercase_chars[Math.floor(Math.random() * uppercase_chars.length)];
+    }
+
+    // append a random numeric char if the flag is true
+    if (numeric) {
+      password += numeric_chars[Math.floor(Math.random() * numeric_chars.length)];
+    }
+
+    // append a random special char if the flag is true
+    if (special) {
+      password += special_chars[Math.floor(Math.random() * special_chars.length)];
+    }
+  }
+
+  // reset the flags if the user wishes to generate another password
+  lowercase = false;
+  uppercase = false;
+  numeric = false;
+  special = false;
 
   return password;
 }
