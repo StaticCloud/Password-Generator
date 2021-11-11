@@ -11,7 +11,8 @@ var lowercase_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l
 // Update: it works!
 var uppercase_chars = lowercase_chars.map(char => char.toUpperCase());
 var numeric_chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var special_chars = ['!','\'', '"', '#', '$', '@', '!', '?', '&', '*', '(', ')', ',', '.', '/', '[', ']', '{', '}', '`', '~', '|'];
+var special_chars = ['!','\\', '"', '#', '$', '@', '!', '?', '&', '*', '(', ')', ',', '.', '/', '[', ']', '{', '}', '`', '~', '|', '\'', '_', '=', '+'];
+console.log(special_chars[1]);
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -118,11 +119,6 @@ var getCharacters = function() {
         special = true;
         break;
       case "5":
-        // verify if at least one of the four charatcer types is enabled
-        if (!lowercase && !uppercase && !numeric && !special) {
-          window.alert("You must include at least one character type in your password.");
-          break;
-        }
         return;
       default:
         window.alert("Please enter one of the five options.");
