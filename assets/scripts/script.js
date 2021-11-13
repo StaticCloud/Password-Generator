@@ -118,6 +118,7 @@ var getCharacters = function() {
         special = true;
         break;
       case "5":
+        // update: for some reason the code below was removed in the most recent commit
         // verify if at least one of the four charatcer types is enabled
         if (!lowercase && !uppercase && !numeric && !special) {
           window.alert("You must include at least one character type in your password.");
