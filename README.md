@@ -1,4 +1,4 @@
-# Password-Generator-Challenge
+# Password-Generator
 ***
 ![Site Preview](./assets/images/readme-image.png)
 
