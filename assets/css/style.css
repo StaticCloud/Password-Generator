@@ -17,6 +17,8 @@
 
 body {
   background-color: var(--background);
+  animation-name: load;
+  animation-duration: 1s;
 }
 
 input {
@@ -48,16 +50,16 @@ button {
 
 #password {
   width: 100%;
-  padding: 40px 0;
+  padding: 50px 0;
 }
 
 /* animate on load */
 @keyframes load {
   from {
-
+    opacity: 0;
   }
 
   to {
-
+    opacity: 1;
   }
 }

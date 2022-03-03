@@ -1,5 +1,6 @@
 // list of all specific characters
-let characters = "1234567890!@#$%^&*()_+{}|<>,.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+// adding twice as many special characters and numbers so there is a fair ratio of special characters, numbers, and letters 
+let characters = "1234567890!@#$%^&*()_+{}|<>,.1234567890!@#$%^&*()_+{}|<>,.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
 // shuffle characters in array as extra level of security
 const shuffle = (array, rate) => {
@@ -19,6 +20,21 @@ const shuffle = (array, rate) => {
   return shuffle(array[randIndex].concat(first.concat(last)), rate - 1)
 }
 
-const array = shuffle(characters, 500);
+// const array = shuffle(characters, 500);
 
-console.log(array);
+// generate password function
+const generatePassword = array => {
+
+  // empty password string
+  let password = "";
+
+  for (let i = 0; i < 18; i++) {
+    // append to the string until we reach 18 characters
+    password += array[Math.floor(Math.random() * array.length)];
+  }
+
+  // return the password
+  return password;
+}
+
+console.log(generatePassword(shuffle(characters, 10000)));
