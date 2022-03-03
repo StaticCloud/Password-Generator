@@ -3,7 +3,7 @@ const generate = document.querySelector('#generate');
 // list of all specific characters
 let characters = "1234567890!@#$%^&*()_+{}|<>,.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-// shuffle characters in array as extra level of security
+// shuffle array given a rate (higher rate = more shuffle() calls)
 const shuffle = (array, rate) => {
   // if the rate is zero, return
   if (rate === 0) {
@@ -11,17 +11,20 @@ const shuffle = (array, rate) => {
   }
 
   // get a random index of the array passed through
-  let randIndex = Math.floor(Math.random() * characters.length);
+  let randIndex = Math.floor(Math.random() * array.length);
 
-  // split the array at the random index
+  // split the array at the random index...
   let [first, last] = [array.slice(0, randIndex), array.slice(randIndex + 1)];
 
-  // add character back to the front of the array and concat the first and last arrays
-  // recall shuffle
-  return shuffle(array[randIndex].concat(first.concat(last)), rate - 1)
+  // ...then append the first and last half of the array to the random character
+  let newArray = array[randIndex].concat(first.concat(last))
+
+  // recall shuffle with new array and reduced rate
+  return shuffle(newArray, rate - 1)
 }
 
-// const array = shuffle(characters, 500);
+const array = shuffle(characters, 500);
+console.log(array);
 
 // generate password function
 const generatePassword = array => {

@@ -4,9 +4,7 @@
   --hotpink: #c900a7;
 }
 
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
   font-family: 'Fredoka', sans-serif;
   font-size: x-large;
