@@ -1,6 +1,7 @@
+const generate = document.querySelector('#generate');
+
 // list of all specific characters
-// adding twice as many special characters and numbers so there is a fair ratio of special characters, numbers, and letters 
-let characters = "1234567890!@#$%^&*()_+{}|<>,.1234567890!@#$%^&*()_+{}|<>,.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+let characters = "1234567890!@#$%^&*()_+{}|<>,.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
 // shuffle characters in array as extra level of security
 const shuffle = (array, rate) => {
@@ -37,4 +38,16 @@ const generatePassword = array => {
   return password;
 }
 
-console.log(generatePassword(shuffle(characters, 10000)));
+generate.addEventListener('click', () => {
+  // get the shuffle rate from the user
+  const rate = document.querySelector('input[id="rate"]').value.trim();
+  // if rate has a value less than 10000 and more than 0
+  if (rate) {
+    if ((rate < 10000) && (rate > 0)) {
+      // create the password
+      const password = generatePassword(shuffle(characters, 10000))
+      // display it to the user
+      document.querySelector('input[id="password"]').value = password;
+    }
+  }
+})
