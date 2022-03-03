@@ -29,7 +29,7 @@ const generatePassword = array => {
   // empty password string
   let password = "";
 
-  for (let i = 0; i < 18; i++) {
+  for (let i = 0; i < 20; i++) {
     // append to the string until we reach 18 characters
     password += array[Math.floor(Math.random() * array.length)];
   }
@@ -43,9 +43,9 @@ generate.addEventListener('click', () => {
   const rate = document.querySelector('input[id="rate"]').value.trim();
   // if rate has a value less than 10000 and more than 0
   if (rate) {
-    if ((rate < 10000) && (rate > 0)) {
+    if ((rate <= 10000) && (rate > 0)) {
       // create the password
-      const password = generatePassword(shuffle(characters, 10000))
+      const password = generatePassword(shuffle(characters, rate))
       // display it to the user
       document.querySelector('input[id="password"]').value = password;
     }

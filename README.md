@@ -1,9 +1,9 @@
-# Password-Generator
+# Quick Password Generator
 ***
-![Site Preview](./assets/images/readme-image.png)
+![Site Preview](./assets/images/prev-img.png)
 
 # Description
-In this challenge, I had to complete a password generator. The HTML and CSS are already complete, my job was to handle actually generating the password. It was important to know how long the password was supposed to be, including what types of characters to include (uppercase, lowercase, special, numeric). One this information was obtained through the user via prompts, the password would appear inside the box.
+This is a newer version of my previous password generator. Not only did I give it a fresh new coat of paint, but also used this revamp as a way to exercise my understanding of recursive functions. I also reworked my password generator in wake of Hive System's [recent password security table](https://www.hivesystems.io/blog/are-your-passwords-in-the-green?utm_source=header), it would take a computer 438 trillion years to brute force an 18-character password with upper case and lower case letters, numbers, and symbols. This password generator is created with this criteria in mind, including an experimental shuffle rate feature.
 
 # Links
 
