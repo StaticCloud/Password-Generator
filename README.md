@@ -7,4 +7,4 @@ This is a newer version of my previous password generator. Not only did I give i
 
 # Links
 
-[Deployed Page](https://staticcloud.github.io/Password-Generator-Challenge/)
+[Deployed Page](https://staticcloud.github.io/Password-Generator/)
