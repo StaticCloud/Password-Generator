@@ -12,12 +12,18 @@
   </head>
   <body>
     <div class="wrapper">
-      <h1 class="heading-text">Generate a Password</h1>
+      <input 
+        readonly
+        placeholder="Generate a Password"
+        id="password"
+        class="heading-text">
+      </input>
       <div class="container">
-        <textarea
-          readonly
-          placeholder="Your Secure Password"
-        ></textarea>
+        <label for="rate">Rate</label>
+        <input 
+          placeholder="100"
+          id="rate">
+        </input>
       </div>
       <button id="generate" class="btn">Generate Password</button>
     </div>
