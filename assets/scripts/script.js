@@ -5,14 +5,7 @@ var numeric = false;
 var special = false;
 
 // list of all specific characters
-var lowercase_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-// not sure if this works correctly, I'll find out once I start experimenting with appending things to a password
-// Update: it works!
-var uppercase_chars = lowercase_chars.map(char => char.toUpperCase());
-var numeric_chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-var special_chars = ['!','\\', '"', '#', '$', '@', '!', '?', '&', '*', '(', ')', ',', '.', '/', '[', ']', '{', '}', '`', '~', '|', '\'', '_', '=', '+'];
-console.log(special_chars[1]);
+var characters = "1234567890!@#$%^&*()_+{}|<>,.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
