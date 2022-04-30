@@ -14,4 +14,4 @@ This is a newer version of my previous password generator. Not only did I give i
 
 Here's an overview of the app!
 
-![overview](./assets/images/PasswordGenOverview.png)
+![overview](./assets/images/PGO.png)
